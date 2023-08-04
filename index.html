@@ -9,6 +9,36 @@
 </head>
 <body>
     <main>
+
+        <!-- countdown -->
+        <div class="flex gap-10 m-8">
+            <div>
+                <p id="days">
+                    00
+                </p>
+                <span>Days</span>
+            </div>
+
+            <div>
+                <p id="hours">
+                    00
+                </p>
+                <span>hours</span>
+            </div>
+            <div>
+                <p id="minutes">
+                    00
+                </p>
+                <span>minutes</span>
+            </div>
+            <div>
+                <p id="seconds">
+                    00
+                </p>
+                <span>seconds</span>
+            </div>
+        </div>
+
         <!-- Hex color generator -->
         <div id="container">
             <div>
@@ -26,7 +56,8 @@
                 <form id="form" action="">
 
                     <label for="amount">Paragraph Number: </label>
-                    <input id="amount" type="text" placeholder="Please enter 0 - 5" class="input input-bordered w-full max-w-xs" />
+                    <input id="amount" type="text" placeholder="Please enter 0 - 7"
+                        class="input input-bordered w-full max-w-xs" />
                     <button type="" class="btn btn-neutral">Generate</button>
                 </form>
             </div>
@@ -34,6 +65,16 @@
                 <article id="result">here will show article</article>
             </div>
         </div>
+
+        <!-- Meme Generator -->
+
+        <div class="memeGenerator">
+            <button onclick="generateMeme ()" class="btn btn-neutral">Generate Meme</button>
+            <h2 class="memeTitle">Loading...</h2>
+      
+            <img height="100px" src="" alt="" />
+            <div class="memeAuthor"></div>
+          </div>
 
     </main>
     <script src="./app.js"></script>

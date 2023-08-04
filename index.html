@@ -7,17 +7,34 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body id="container">
+<body>
     <main>
         <!-- Hex color generator -->
-        <div>
-            <div class="">
+        <div id="container">
+            <div>
                 <button onclick="colorGenerator()" class="btn btn-neutral">Generate Color</button>
             </div>
             <div id="output">
                 #FFFFFF
             </div>
         </div>
+
+        <!-- lorem ipsum generator -->
+        <div>
+            <div>
+                <h2>Lorrem Ipsum Generator</h2>
+                <form id="form" action="">
+
+                    <label for="amount">Paragraph Number: </label>
+                    <input id="amount" type="text" placeholder="Please enter 0 - 5" class="input input-bordered w-full max-w-xs" />
+                    <button type="" class="btn btn-neutral">Generate</button>
+                </form>
+            </div>
+            <div>
+                <article id="result">here will show article</article>
+            </div>
+        </div>
+
     </main>
     <script src="./app.js"></script>
 </body>

@@ -6,77 +6,126 @@
     <title>All In One</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: [
+                "light", "dark"
+            ]
+        }
+    </script>
 </head>
-<body>
+<body class=" h-screen">
+    <!-- Navbar -->
+
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#countdown">Countdown</a></li>
+                    <li><a href="#container">Color Generator</a></li>
+                    <li><a href="#loremIpsum">Lorem Ipsum Generator</a></li>
+                    <li><a href="#memeGenerator">Meme Generator</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl">All JS Project In One</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#countdown">Countdown</a></li>
+                <li><a href="#container">Color Generator</a></li>
+                <li><a href="#loremIpsum">Lorem Ipsum Generator</a></li>
+                <li><a href="#memeGenerator">Meme Generator</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <input data-toggle-theme="dark,light" type="checkbox" class="toggle" checked />
+        </div>
+    </div>
     <main>
 
         <!-- countdown -->
-        <div class="flex gap-10 m-8">
-            <div>
-                <p id="days">
-                    00
-                </p>
-                <span>Days</span>
-            </div>
+        <div id="countdown">
+            <div class="flex gap-10 justify-center items-center my-80">
+                <div>
+                    <h1 class="text-2xl">New year Starts In : </h1>
+                </div>
+                <div>
+                    <p id="days">
+                        00
+                    </p>
+                    <span>Days</span>
+                </div>
 
-            <div>
-                <p id="hours">
-                    00
-                </p>
-                <span>hours</span>
-            </div>
-            <div>
-                <p id="minutes">
-                    00
-                </p>
-                <span>minutes</span>
-            </div>
-            <div>
-                <p id="seconds">
-                    00
-                </p>
-                <span>seconds</span>
+                <div>
+                    <p id="hours">
+                        00
+                    </p>
+                    <span>hours</span>
+                </div>
+                <div>
+                    <p id="minutes">
+                        00
+                    </p>
+                    <span>minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">
+                        00
+                    </p>
+                    <span>seconds</span>
+                </div>
             </div>
         </div>
 
         <!-- Hex color generator -->
-        <div id="container">
+        <div id="container" class="flex gap-10 justify-center items-center my-64 p-96">
             <div>
-                <button onclick="colorGenerator()" class="btn btn-neutral">Generate Color</button>
+                <button onclick="colorGenerator()" class="btn btn-neutral">click To Generate Color</button>
             </div>
-            <div id="output">
+            <div id="output" class="text-2xl text-white p-4">
                 #FFFFFF
             </div>
         </div>
 
         <!-- lorem ipsum generator -->
-        <div>
+        <div id="loremIpsum" class="flex gap-10 justify-center items-center my-16 p-16">
             <div>
-                <h2>Lorrem Ipsum Generator</h2>
+                <h2>Lorem Ipsum Generator</h2>
                 <form id="form" action="">
 
-                    <label for="amount">Paragraph Number: </label>
+                    <label for="amount">Paragraph Number : </label>
                     <input id="amount" type="text" placeholder="Please enter 0 - 7"
-                        class="input input-bordered w-full max-w-xs" />
-                    <button type="" class="btn btn-neutral">Generate</button>
+                        class="input input-bordered w-full max-w-xs my-16" />
+                    <button type="" class="btn btn-neutral">Click To Generate Lorem Ipsum</button>
                 </form>
             </div>
             <div>
-                <article id="result">here will show article</article>
+                <article class="text-xl" id="result">Here will show Lorem Ipsum Paragraph...</article>
             </div>
         </div>
 
         <!-- Meme Generator -->
 
-        <div class="memeGenerator">
-            <button onclick="generateMeme ()" class="btn btn-neutral">Generate Meme</button>
-            <h2 class="memeTitle">Loading...</h2>
-      
-            <img height="100px" src="" alt="" />
-            <div class="memeAuthor"></div>
-          </div>
+        <div id="memeGenerator" class="flex gap-10 justify-center items-center my-86 p-96">
+            <div class="memeGenerator">
+                <button onclick="generateMeme ()" class="btn btn-neutral">Click To Generate Meme</button>
+                <h2 class="memeTitle my-4">Loading...</h2>
+
+                <img src="" alt="" />
+                <div class="memeAuthor"></div>
+            </div>
+        </div>
 
     </main>
     <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </body>
 </html>

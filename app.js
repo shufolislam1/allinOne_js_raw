@@ -51,7 +51,6 @@ let newYear = new Date(`January 1, ${currentYear + 1} 00:00:00`)
 function updateTime() {
     let currentTime = new Date();
     let diffrence = newYear - currentTime;
-    console.log(diffrence);
     let day = Math.floor(diffrence / 1000 / 60 / 60 / 24);
     let hour = Math.floor(diffrence / 1000 / 60 / 60) % 24;
     let min = Math.floor(diffrence / 1000 / 60) % 60;
